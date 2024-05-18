@@ -1,0 +1,44 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort"
+  ],
+  "parserOptions": {
+    "project": true,
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "@typescript-eslint/no-shadow": "error",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 10,
+        "ignoreExternal": true
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "name": "react-i18next",
+        "message": "Please use next-18next instead."
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "rule-name": "off"
+  }
+}
