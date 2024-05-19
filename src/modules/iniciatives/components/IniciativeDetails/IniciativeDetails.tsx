@@ -17,7 +17,7 @@ export const IniciativeDetails = ({ iniciative }: VoteDetailsProps) => {
         subtitle={iniciative.title}
         description={iniciative.content}
         status={{
-          label: 'Ongoing',
+          label: iniciativeStatusMap[iniciative.status].label,
           variant: iniciativeStatusMap[iniciative.status].variant,
           icon: iniciativeStatusMap[iniciative.status].icon,
         }}

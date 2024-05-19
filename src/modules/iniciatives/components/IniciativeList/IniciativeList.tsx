@@ -18,7 +18,7 @@ export const IniciativeList = () => {
             title={title}
             description={content}
             status={{
-              label: 'Ongoing',
+              label: iniciativeStatusMap[status].label,
               variant: iniciativeStatusMap[status].variant,
               icon: iniciativeStatusMap[status].icon,
             }}

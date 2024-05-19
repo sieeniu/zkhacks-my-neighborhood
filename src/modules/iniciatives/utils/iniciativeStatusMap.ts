@@ -9,17 +9,21 @@ export const iniciativeStatusMap: Record<
   {
     variant: BadgeVariant;
     icon?: FunctionComponent<SVGAttributes<SVGElement>>;
+    label: string;
   }
 > = {
   sent: {
     variant: 'primary',
+    label: 'Sent',
   },
   approved: {
     icon: ThumbsupIcon,
     variant: 'success',
+    label: 'Approved',
   },
   rejected: {
     icon: ThumbsdownIcon,
     variant: 'danger',
+    label: 'Rejected',
   },
 };
