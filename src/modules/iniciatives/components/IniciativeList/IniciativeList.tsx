@@ -11,7 +11,7 @@ export const IniciativeList = () => {
   return (
     <IniciativeListWrapper>
       {iniciativesList.map(({ id, title, status, content }) => (
-        <Link key={id} href={routes.getVote(id)}>
+        <Link key={id} href={routes.getIniciative(id)}>
           <Card
             key={id}
             id={id}
