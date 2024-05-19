@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html, body, #__next, main {
+    html, body, #__next, main, h1, h2, h3, h4, h5, p {
         margin: 0;
         padding: 0;
     }

@@ -1,18 +1,24 @@
 import { usePathname } from 'next/navigation';
 
 import { Breadcrumbs } from '@/components';
+import { WalletId } from '@/modules/common/components/WalletId';
 
-import { TopbarWrapper } from './Topbar.styles';
+import { TopbarActions, TopbarWrapper } from './Topbar.styles';
 
-type TopbarProps = {};
+type TopbarProps = {
+  userWallet: string;
+};
 
-export const Topbar = ({}: TopbarProps) => {
+export const Topbar = ({ userWallet }: TopbarProps) => {
   const pathname = usePathname();
-
-  const paths = pathname.split('/').filter(path => path);
+  const paths = pathname?.split('/')?.filter(path => path) ?? [];
   return (
     <TopbarWrapper>
       <Breadcrumbs paths={['home', ...paths]} separator={<span> / </span>} />
+      <TopbarActions>
+
+        <WalletId address={userWallet} />
+      </TopbarActions>
     </TopbarWrapper>
   );
 };

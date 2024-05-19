@@ -1,1 +1,2 @@
-export * from './VoteList';
+export * from './ResolutionDetails';
+export * from './ResolutionList';

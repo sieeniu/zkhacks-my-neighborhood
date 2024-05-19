@@ -1,4 +1,9 @@
-import { HomeIcon, VoteIcon } from '@/components';
+import {
+  ComplaintsIcon,
+  HomeIcon,
+  LightBulbIcon,
+  VoteIcon,
+} from '@/components';
 import { routes } from '@/routes';
 
 import { NavLink } from '../types';
@@ -16,6 +21,18 @@ export const useNavigation = () => {
       href: routes.voting,
       Icon: VoteIcon,
       label: 'Voting',
+    },
+    {
+      id: 'iniciatives',
+      href: routes.iniciatives,
+      Icon: LightBulbIcon,
+      label: 'Iniciatives',
+    },
+    {
+      id: 'complaints',
+      href: routes.complaints,
+      Icon: ComplaintsIcon,
+      label: 'Complaints',
     },
   ];
 

@@ -11,12 +11,12 @@ export const SidebarWrapper = styled.nav`
 `;
 
 export const NavigationList = styled.ul`
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  gap: ${({ theme }) => theme.spacing.sm};
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
 `;
 
 export const NavigationListItem = styled.li<{ $isActive?: boolean }>`

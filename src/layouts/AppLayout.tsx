@@ -14,7 +14,8 @@ const PageContainer = styled.div`
 `;
 
 const PageContent = styled.div`
-    padding: 30px;`;
+  padding: 30px;
+`;
 
 export const AppLayout = ({ children }: PropsWithChildren) => {
   const { navLinks } = useNavigation();
@@ -22,7 +23,7 @@ export const AppLayout = ({ children }: PropsWithChildren) => {
     <Main>
       <SidebarNavigation navLinks={navLinks} />
       <PageContainer>
-        <Topbar />
+        <Topbar userWallet="0xYc677...78fe" />
         <PageContent>{children}</PageContent>
       </PageContainer>
     </Main>

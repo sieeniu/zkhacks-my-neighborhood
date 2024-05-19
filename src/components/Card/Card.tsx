@@ -1,24 +1,56 @@
 import { FunctionComponent, SVGAttributes } from 'react';
 
+import { BadgeVariant } from '@/types';
+import { dateFormat } from '@/utils/dateFormat';
+
 import { Badge } from '../Badge';
-import { CardDescription, CardTitle, CardWrapper } from './Card.styles';
+import { CreatedAtIcon } from '../Icons';
+import {
+  CardCreatedAt,
+  CardDescription,
+  CardSubtitle,
+  CardTitle,
+  CardWrapper,
+} from './Card.styles';
 
 type CardProps = {
-  id: string;
+  id?: string;
   title: string;
-  descriptions: string;
+  subtitle?: string;
+  description?: string;
   status?: {
     icon?: FunctionComponent<SVGAttributes<SVGElement>>;
     label: string;
+    variant?: BadgeVariant;
   };
+  createdAt?: string;
 };
 
-export const Card = ({ id, title, descriptions, status }: CardProps) => {
+export const Card = ({
+  title,
+  subtitle,
+  description,
+  status,
+  createdAt,
+}: CardProps) => {
   return (
     <CardWrapper>
-      {status && <Badge Icon={status?.icon} value={status.label} />}
+      {status && (
+        <Badge
+          variant={status.variant}
+          Icon={status?.icon}
+          value={status.label}
+        />
+      )}
       <CardTitle>{title}</CardTitle>
-      <CardDescription>{descriptions}</CardDescription>
+      {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
+      {createdAt && (
+        <CardCreatedAt>
+          <CreatedAtIcon />
+          {dateFormat(createdAt)}
+        </CardCreatedAt>
+      )}
+      {description && <CardDescription>{description}</CardDescription>}
     </CardWrapper>
   );
 };

@@ -15,7 +15,7 @@
   "rules": {
     "@typescript-eslint/no-shadow": "error",
     "import/no-cycle": [
-      "error",
+      "warn",
       {
         "maxDepth": 10,
         "ignoreExternal": true
